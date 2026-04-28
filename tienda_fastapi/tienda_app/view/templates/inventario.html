@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <title>Inventario</title>
+  <link rel="stylesheet" href="static/css/style.css" />
+</head>
+<body>
+  <div class="container">
+    <header>
+      <h1>Inventario</h1>
+      <a class="back" href=".">⬅ Volver</a>
+    </header>
+
+    <div class="toolbar">
+      <input id="filtro" placeholder="Filtrar por nombre/categoria..." />
+      <button id="btnRecargar">Recargar</button>
+    </div>
+
+    <table class="tabla">
+      <thead>
+        <tr>
+          <th>ID</th><th>Nombre</th><th>Categoría</th>
+          <th>Código</th><th>P. Venta</th><th>Stock</th><th></th>
+        </tr>
+      </thead>
+      <tbody id="tbody"></tbody>
+    </table>
+  </div>
+
+  <script src="static/js/app.js"></script>
+  <script>InventarioPage.init();</script>
+</body>
+</html>

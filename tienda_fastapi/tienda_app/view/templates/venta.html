@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <title>Realizar Venta</title>
+  <link rel="stylesheet" href="static/css/style.css" />
+</head>
+<body>
+  <div class="container">
+    <header>
+      <h1>Realizar Venta</h1>
+      <a class="back" href=".">⬅ Volver</a>
+    </header>
+
+    <section class="card-form">
+      <h3>Agregar producto al carrito</h3>
+      <div class="row">
+        <select id="selProducto"></select>
+        <input id="cant" type="number" step="0.01" value="1" />
+        <button id="btnAdd">Añadir</button>
+      </div>
+    </section>
+
+    <table class="tabla">
+      <thead>
+        <tr>
+          <th>ID</th><th>Producto</th><th>Cant.</th>
+          <th>Precio</th><th>Subtotal</th><th></th>
+        </tr>
+      </thead>
+      <tbody id="carrito"></tbody>
+    </table>
+
+    <section class="card-form">
+      <h3>Cliente (opcional)</h3>
+      <div class="row">
+        <input id="cliId"     type="number"  placeholder="ID cliente" />
+        <input id="cliNombre" type="text"    placeholder="Nombre" />
+        <input id="cliTel"    type="text"    placeholder="Teléfono" />
+      </div>
+
+      <h3>Descuento (opcional)</h3>
+      <div class="row">
+        <select id="descTipo">
+          <option value="">Ninguno</option>
+          <option value="porcentaje">Porcentaje (%)</option>
+          <option value="fijo">Fijo ($)</option>
+        </select>
+        <input id="descVal" type="number" step="0.01" placeholder="Valor" />
+      </div>
+
+      <button id="btnCobrar" class="primary">Cobrar y generar ticket</button>
+    </section>
+
+    <pre id="ticket" class="ticket"></pre>
+  </div>
+
+  <script src="static/js/app.js"></script>
+  <script>VentaPage.init();</script>
+</body>
+</html>

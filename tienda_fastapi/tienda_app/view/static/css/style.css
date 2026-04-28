@@ -1,0 +1,185 @@
+/* ============================================
+   Sistema de Tienda - estilos plano
+   ============================================ */
+:root {
+  --bg:        #0f1115;
+  --panel:     #181b22;
+  --panel-2:   #20242e;
+  --border:    #2a2f3a;
+  --text:      #e6e8ee;
+  --muted:     #9aa3b2;
+  --accent:    #00e5a8;
+  --accent-2:  #00b487;
+  --danger:    #ff5d6c;
+  --warning:   #ffd166;
+}
+
+* { box-sizing: border-box; }
+
+body {
+  margin: 0;
+  background: var(--bg);
+  color: var(--text);
+  font-family: 'Segoe UI', system-ui, -apple-system, sans-serif;
+  line-height: 1.5;
+}
+
+.container {
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 32px 20px 80px;
+}
+
+/* Header */
+header {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  margin-bottom: 24px;
+  border-bottom: 1px solid var(--border);
+  padding-bottom: 14px;
+}
+header h1 { color: var(--accent); margin: 0; font-size: 28px; }
+
+.hero { text-align: center; border: none; flex-direction: column; padding: 40px 0 24px; }
+.hero h1 { font-size: 38px; }
+.hero .sub { color: var(--muted); margin-top: 6px; }
+
+.back {
+  color: var(--accent);
+  text-decoration: none;
+  font-size: 14px;
+}
+.back:hover { color: var(--accent-2); }
+
+/* Cards en index */
+.cards {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(240px,1fr));
+  gap: 18px;
+  margin-top: 24px;
+}
+.card {
+  background: var(--panel);
+  border: 1px solid var(--border);
+  padding: 22px;
+  border-radius: 14px;
+  text-decoration: none;
+  color: var(--text);
+  transition: transform .15s ease, border-color .15s ease;
+}
+.card:hover {
+  transform: translateY(-3px);
+  border-color: var(--accent);
+}
+.card h2 { color: var(--accent); margin: 0 0 6px; font-size: 18px; }
+.card p { margin: 0; color: var(--muted); }
+
+.foot { text-align: center; margin-top: 40px; color: var(--muted); }
+.foot a { color: var(--accent); }
+
+/* Forms */
+.card-form {
+  background: var(--panel);
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  padding: 20px;
+  margin: 16px 0;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+.card-form h3 { margin: 0; color: var(--accent); }
+label {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  font-size: 13px;
+  color: var(--muted);
+}
+input, select, textarea {
+  padding: 10px 12px;
+  background: var(--panel-2);
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  color: var(--text);
+  font-size: 14px;
+  width: 100%;
+}
+input:focus, select:focus { outline: none; border-color: var(--accent); }
+
+button {
+  padding: 10px 16px;
+  background: var(--accent);
+  color: #0a0a0a;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  font-weight: 600;
+  font-size: 14px;
+  transition: background .15s ease;
+}
+button:hover { background: var(--accent-2); }
+button.primary { font-size: 16px; padding: 14px; }
+button.danger  { background: var(--danger); color: white; }
+
+.toolbar { display:flex; gap:10px; margin: 16px 0; align-items:center; }
+.toolbar input { flex: 1; }
+
+.row {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(160px,1fr));
+  gap: 10px;
+}
+
+/* Tabla */
+.tabla {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 12px;
+  background: var(--panel);
+  border-radius: 10px;
+  overflow: hidden;
+}
+.tabla th, .tabla td {
+  text-align: left;
+  padding: 10px 12px;
+  border-bottom: 1px solid var(--border);
+  font-size: 14px;
+}
+.tabla th {
+  background: var(--panel-2);
+  color: var(--accent);
+  font-weight: 600;
+}
+.tabla tr:hover td { background: rgba(0,229,168,0.04); }
+
+.msg { color: var(--accent); margin-top: 10px; min-height: 18px; }
+.msg.error { color: var(--danger); }
+
+.ticket {
+  background: #07090c;
+  color: #e8ffe8;
+  padding: 18px;
+  border-radius: 10px;
+  font-family: 'Courier New', monospace;
+  white-space: pre-wrap;
+  margin-top: 16px;
+  border: 1px solid var(--border);
+}
+
+.badge {
+  display: inline-block;
+  padding: 2px 8px;
+  background: var(--panel-2);
+  border-radius: 999px;
+  font-size: 11px;
+  color: var(--muted);
+}
+.badge.low { color: var(--warning); border: 1px solid var(--warning); }
+
+@media (max-width: 600px) {
+  .container { padding: 16px; }
+  header { flex-direction: column; align-items: flex-start; gap: 8px; }
+  .tabla th, .tabla td { font-size: 12px; padding: 8px 6px; }
+}

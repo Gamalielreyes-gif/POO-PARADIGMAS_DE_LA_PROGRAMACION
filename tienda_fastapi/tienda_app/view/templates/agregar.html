@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <title>Agregar Producto</title>
+  <link rel="stylesheet" href="static/css/style.css" />
+</head>
+<body>
+  <div class="container">
+    <header>
+      <h1>Agregar Producto</h1>
+      <a class="back" href=".">⬅ Volver</a>
+    </header>
+
+    <form id="form" class="card-form">
+      <label>Tipo
+        <select id="tipo">
+          <option value="unitario">Unitario</option>
+          <option value="granel">Granel</option>
+        </select>
+      </label>
+
+      <label>ID base <input type="number" id="id" required /></label>
+      <label>Nombre <input type="text" id="nombre" required /></label>
+      <label>Categoría
+        <select id="categoria">
+          <option>Abarrotes</option>
+          <option>Lacteos</option>
+          <option>Bebidas</option>
+          <option>Limpieza</option>
+          <option>Granos</option>
+        </select>
+      </label>
+      <label>Código de barras <input type="number" id="codigo" required /></label>
+      <label>Precio compra <input type="number" step="0.01" id="compra" required /></label>
+      <label>Precio venta <input type="number" step="0.01" id="venta" required /></label>
+      <label>Stock <input type="number" step="0.001" id="stock" required /></label>
+
+      <button type="submit">Agregar</button>
+    </form>
+
+    <p id="msg" class="msg"></p>
+  </div>
+
+  <script src="static/js/app.js"></script>
+  <script>AgregarPage.init();</script>
+</body>
+</html>
